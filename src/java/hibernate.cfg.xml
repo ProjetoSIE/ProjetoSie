@@ -10,6 +10,7 @@
 <!-- Comentado pois não existe essas tabelas no banco    
     <mapping class="br.com.sie.beans.Aluno"/>  
     <mapping class="br.com.sie.beans.Curso"/>  
-    <mapping class="br.com.sie.beans.Matricula"/> -->
+    <mapping class="br.com.sie.beans.Matricula"/> 
+    <mapping class="br.com.sie.beans.Unidade"/>-->
   </session-factory>
 </hibernate-configuration>
