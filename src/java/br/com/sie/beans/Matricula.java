@@ -4,7 +4,6 @@
  */
 package br.com.sie.beans;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -20,21 +19,22 @@ import javax.persistence.Table;
  *
  * @author Marcos Costa
  */
-@SequenceGenerator(name="SEQMATRICULA", sequenceName="SEQMATRICULA", allocationSize=1, initialValue=1)
-@Entity(name="Matricula")
-@Table(name="Matricula")
-public class Matricula implements Persistent{
+@SequenceGenerator(name = "SEQMATRICULA", sequenceName = "SEQMATRICULA",
+        allocationSize = 1, initialValue = 1)
+@Entity(name = "Matricula")
+@Table(name = "Matricula")
+public class Matricula implements Persistent {
+
     @Id
-    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="SEQMATRICULA")
-    @Column(name="cd_matricula")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+            generator = "SEQMATRICULA")
+    @Column(name = "cd_matricula")
     private long id;
-    
-    @ManyToOne(fetch= FetchType.EAGER)
-    @JoinColumn(name="cd_curso")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "cd_curso")
     private Curso curso;
-    
-    @ManyToOne(fetch= FetchType.EAGER)
-    @JoinColumn(name="cd_aluno")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "cd_aluno")
     private Aluno aluno;
 
     /**
@@ -83,13 +83,13 @@ public class Matricula implements Persistent{
      */
     public void setAluno(Aluno aluno) {
         this.aluno = aluno;
-    }        
+    }
 
     @Override
     public boolean equals(Object obj) {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
-        }        
+        }
         final Matricula other = (Matricula) obj;
         if (this.id != other.id) {
             return false;
@@ -103,6 +103,4 @@ public class Matricula implements Persistent{
         hash = 17 * hash + (int) (this.id ^ (this.id >>> 32));
         return hash;
     }
-    
-    
 }
