@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+
+    <h:panelGrid columns="4"  cellspacing="13px" style="width:950px;" >
+
+        <p:outputLabel value="* Nome do curso:"/>
+        <p:inputText maxlength="40" size="40" required="true"/>
+
+        <p:outputLabel value="* Tipo do curso: "/>
+        <p:selectOneMenu required="true" effect="fade">
+            <f:selectItem itemLabel="Selecione..." itemValue=""/>
+            <f:selectItem itemLabel="Fundamental" itemValue=""/>
+            <f:selectItem itemLabel="Médio" itemValue=""/>
+            <f:selectItem itemLabel="Técnico" itemValue=""/>
+            <f:selectItem itemLabel="Superior" itemValue=""/>
+        </p:selectOneMenu>
+
+        <p:outputLabel value="* Carga horária: "/>
+        <p:inputMask mask="?9?9?99" required="true" size="13" maxlength="4"/>                    
+
+        <p:outputLabel value="* Coordenador: "/>
+        <p:inputText required="true" size="50" maxlength="50"/>
+
+        <p:outputLabel value="* Período: "/>
+        <p:selectOneMenu  required="true">
+            <f:selectItem itemLabel="Selecione..." itemValue=""/>
+            <f:selectItem itemLabel="Manhã" itemValue=""/>
+            <f:selectItem itemLabel="Tarde" itemValue=""/>
+            <f:selectItem itemLabel="Noite" itemValue=""/>
+            <f:selectItem itemLabel="Integral" itemValue=""/>
+        </p:selectOneMenu>
+
+        <p:outputLabel value="* Frenquência semanal: "/>
+        <p:spinner required="true" size="5" max="7" min="1" maxlength="1"/>
+
+        <p:outputLabel value="* Turma do curso: "/>
+        <p:inputMask mask="9999"  required="true" size="8"/>
+
+        <p:outputLabel value="* Valor da matrícula: "/>
+        <p:inputText  required="true" size="8"/>
+
+        <p:outputLabel value="* Valor da mensalidade: "/>
+        <p:inputText  required="true" size="8"/>
+
+        <p:outputLabel value="* Parcelas: "/>
+        <p:spinner  required="true" size="5" max="36" min="1"/>
+
+        <p:outputLabel value="* Quantidade de alunos: "/>
+        <p:inputMask mask="99?999"  required="true" size="8"/>
+
+
+    </h:panelGrid>
+    <h:panelGrid cellspacing="13px" columns="1">
+        <p:outputLabel value="* Campos obrigatórios" style="font-weight: bold"/>   
+    </h:panelGrid>
+    <h:panelGrid columns="2" style="margin-top: 15px">
+        <p:button value="Cadastrar" style="font-size:13px; width:95px"/>
+        <p:button value="Limpar   " style="font-size:13px; width:95px;"/>
+
+
+    </h:panelGrid>
+
+
+</ui:composition>

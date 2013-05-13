@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+
+    <h:panelGrid columns="4"  cellspacing="13px" style="width:950px" >
+
+        <p:outputLabel value="* Nome da disciplina:"/>
+        <p:inputText maxlength="15" size="20" required="true"/>
+
+        <p:outputLabel value="* Sigla da disciplina:"/>
+        <p:inputText maxlength="5" size="10" required="true"/>
+
+        <p:outputLabel value="* Semestre da disciplina:"/>
+        <p:inputMask maxlength="4" size="10" mask="9?999" required="true"/>
+
+        <p:outputLabel value="* Ciclo/Série da disciplina:"/>
+        <p:inputMask maxlength="2" size="8" mask="9?9" required="true"/>
+
+        <p:outputLabel value="* Nome do coordenador:"/>
+        <p:inputText maxlength="30" size="35" required="true"/>
+
+        <p:outputLabel value="* Nome do professor:"/>
+        <p:inputText maxlength="30" size="35" required="true"/>
+
+        <p:outputLabel value="* Carga horária semanal:"/>
+        <p:inputText maxlength="10" size="15" required="true"/>
+
+        <p:outputLabel value="* Carga horária anual:"/>
+        <p:inputText maxlength="10" size="15" required="true"/>
+
+
+        <p:outputLabel value="* Aulas Teóricas:"/>
+        <p:inputTextarea rows="3" autoResize="false"  required="true"/>
+
+        <p:outputLabel value="* Aulas Práticas:"/>
+        <p:inputTextarea rows="3" autoResize="false"  required="true"/>
+
+        <p:outputLabel value="* Aulas Avaliativas:"/>
+        <p:inputTextarea rows="3" autoResize="false" required="true"/>
+
+        <p:outputLabel value="* Metodologias:"/>
+        <p:inputTextarea rows="3" autoResize="false" required="true"/>
+
+        <p:outputLabel value="* Bibliografia:"/>
+        <p:inputTextarea rows="3" autoResize="false"  required="true"/>
+
+        <p:outputLabel value="* Turno da disciplina:"/>
+        <p:selectOneMenu required="true">
+            <f:selectItem itemLabel="Selecione..." itemValue=""/>
+        </p:selectOneMenu>
+
+        <p:outputLabel value="Observações: "/>
+        <p:inputTextarea autoResize="false"  rows="3" />
+
+    </h:panelGrid>
+    <h:panelGrid columns="1">
+        <p:outputLabel value="* Campos obrigatórios" style="font-weight: bold"/> 
+    </h:panelGrid>
+    <h:panelGrid columns="2" style="margin-top: 15px">
+        <p:button value="Cadastrar" style="font-size:13px; width:95px"/>
+        <p:button value="Limpar   " style="font-size:13px; width:95px;"/>
+
+
+    </h:panelGrid>
+
+</ui:composition>
