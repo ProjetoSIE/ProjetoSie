@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+
+
+    <h:panelGrid columns="4"  cellspacing="13px" style="width:900px;" >
+
+        <p:outputLabel value="* Nome da turma:"/>
+        <p:inputText  maxlength="40" size="40" required="true"/>
+
+        <p:outputLabel value="* Nome do coordenador:"/>
+        <p:inputText  maxlength="50" size="50" required="true"/>
+
+        <p:outputLabel value="* Curso: "/>
+        <p:selectOneMenu required="true" >
+            <f:selectItem itemLabel="Selecione..." itemValue=""/>
+        </p:selectOneMenu>
+
+        <p:outputLabel value="* Semestre atual: "/>
+        <p:inputMask mask="9"  required="true" size="5" />                    
+
+        <p:outputLabel value="* Período: "/>
+        <p:selectOneMenu required="true" >
+            <f:selectItem itemLabel="Selecione..." itemValue=""/>
+            <f:selectItem itemLabel="Manhã" itemValue=""/>
+            <f:selectItem itemLabel="Tarde" itemValue=""/>
+            <f:selectItem itemLabel="Noite" itemValue=""/>
+            <f:selectItem itemLabel="Integral" itemValue=""/>
+        </p:selectOneMenu>
+
+        <p:outputLabel value="* Data de início: "/>
+        <p:inputMask mask="99/99/9999"  required="true" size="12" />                    
+
+        <p:outputLabel value="* Data de término: "/>
+        <p:inputMask mask="99/99/9999"  required="true" size="12" />                    
+
+        <p:outputLabel value="* Hora de entrada: "/>
+        <p:inputMask mask="99:99"  required="true" size="8" />    
+
+        <p:outputLabel value="* Hora de saída: "/>
+        <p:inputMask mask="99:99"  required="true" size="8" />                    
+
+    </h:panelGrid>
+    <h:panelGrid columns="1"  cellspacing="13px" style="width:75%;" >
+        <p:outputLabel value="* Campos obrigatórios" style="font-weight: bold"/> 
+    </h:panelGrid>
+    <h:panelGrid columns="2" style="margin-top: 15px">
+        <p:button value="Cadastrar" style="font-size:13px; width:95px"/>
+        <p:button value="Limpar   " style="font-size:13px; width:95px;"/>
+
+
+    </h:panelGrid>
+
+</ui:composition>

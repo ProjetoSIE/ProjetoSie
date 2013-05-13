@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+
+
+    <h:panelGrid columns="2"  cellspacing="13px" style="width:700px;" >
+
+        <p:outputLabel value="* Nome do subnível:"/>
+        <p:inputText maxlength="40" size="40" required="true"/>
+
+        <p:outputLabel value="Observações"/>
+        <p:inputTextarea autoResize="false" rows="3" />
+
+
+    </h:panelGrid>
+    <h:panelGrid cellspacing="13px" columns="1">
+        <p:outputLabel value="* Campo obrigatórios" style="font-weight: bold"/>   
+    </h:panelGrid>
+    <h:panelGrid columns="2" style="margin-top: 15px">
+        <p:button value="Cadastrar" style="font-size:13px; width:95px"/>
+        <p:button value="Limpar   " style="font-size:13px; width:95px;"/>
+
+
+    </h:panelGrid>
+
+</ui:composition>
