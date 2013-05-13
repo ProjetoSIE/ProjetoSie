@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+
+
+    <h:panelGrid columns="1" cellspacing="8px">
+        <p:outputLabel value="Preencha pelo menos um dos campos a seguir para buscar:"/>
+    </h:panelGrid>
+    <h:panelGrid columns="3" cellspacing="8px">
+        <p:outputLabel value="CPF: " />
+        <p:inputMask mask="999.999.999-99"  size="21"/>
+        <p/>
+        <p:outputLabel value="Nome do Funcionário: "/>
+        <p:inputText  maxlength="50" size="50"/>
+        <p:commandButton value="Buscar"/>
+    </h:panelGrid>
+    <h:panelGrid columns="1" style="margin-bottom: 10px;margin-top:25px;width:100%">
+        <p:dataTable emptyMessage="Sem registro de funcionários" style="text-align: center">
+            <p:column headerText="CPF" rendered="true">
+                <p:outputLabel value="Exemplo"/>
+            </p:column>
+            <p:column headerText="Nome do funcionário">
+                <p:outputLabel value="Exemplo"/>
+            </p:column>
+
+            <p:column headerText="Alterar Funcionário">
+                <h:button value="Alterar"/>
+            </p:column>
+            <p:column headerText="Desativar Funcionário">
+                <h:button value="Desativar"/>
+            </p:column>
+
+        </p:dataTable>
+    </h:panelGrid>
+
+
+    <p:panel rendered="false"  header="Dados do Funcionário" style="font-size: 9.5px;"> 
+
+        <h:panelGrid columns="4"  cellspacing="13px" style="width:950px;" >
+            <p:outputLabel value="* Nome Completo: "/>
+            <p:inputText required="true" size="50" maxlength="50"/>                    
+
+
+            <p:outputLabel value="* Data de nascimento: "/>
+            <p:inputMask  mask="99/99/9999" size="12" maxlength="10" required="true"/>                  
+
+            <p:outputLabel value="* RG: "/>
+            <h:panelGrid columns="3">
+                <p:inputText required="true" size="18" maxlength="15" />
+                <p:outputLabel value=" - "/>
+                <p:inputText  required="true" size="2" maxlength="1" />
+            </h:panelGrid>
+
+            <p:outputLabel value="* CPF: "/>
+            <p:inputText id="cpf" maxlength="11" required="true" size="21"/>
+
+
+            <p:outputLabel value="* Gênero: "/>
+            <p:selectOneMenu  effect="fade"> 
+                <f:selectItem itemLabel="Selecione o gênero..." itemValue=""/>
+                <f:selectItem itemLabel="Feminino" itemValue="1"/>
+                <f:selectItem itemLabel="Masculino" itemValue="2"/>
+                <f:selectItem itemLabel="Indefinido" itemValue="3"/>
+            </p:selectOneMenu>
+
+            <p:outputLabel value="* Cor: "/>
+            <p:selectOneMenu  effect="fade"> 
+                <f:selectItem itemLabel="Selecione a cor..." itemValue=""/>
+                <f:selectItem itemLabel="Branca" itemValue="1"/>
+                <f:selectItem itemLabel="Negra" itemValue="2"/>
+                <f:selectItem itemLabel="Parda" itemValue="3"/>
+                <f:selectItem itemLabel="Amarela" itemValue="4"/>
+                <f:selectItem itemLabel="Indígena" itemValue="5"/>
+            </p:selectOneMenu>
+
+            <p:outputLabel value="* Estado civil: "/>
+            <p:selectOneMenu  effect="fade" required="true"> 
+                <f:selectItem itemLabel="Selecione..." itemValue=""/>
+                <f:selectItem itemLabel="Solteiro(a)" itemValue="1"/>
+                <f:selectItem itemLabel="Casado(a)" itemValue="2"/>
+                <f:selectItem itemLabel="Divorciado(a)" itemValue="3"/>
+                <f:selectItem itemLabel="Viúvo(a)" itemValue="4"/>
+            </p:selectOneMenu>
+
+            <p:outputLabel value="* País: "/>
+            <p:selectOneMenu  effect="fade" required="true"> 
+                <f:selectItem itemLabel="Selecione..." itemValue=""/>
+            </p:selectOneMenu>
+
+            <p:outputLabel value="* Estado: "/>
+            <p:selectOneMenu  effect="fade" required="true"> 
+                <f:selectItem itemLabel="Selecione o estado..." itemValue=""/>
+            </p:selectOneMenu>
+
+            <p:outputLabel value="* Cidade: "/>
+            <p:selectOneMenu  effect="fade" required="true"> 
+                <f:selectItem itemLabel="Selecione a cidade..." itemValue=""/>
+            </p:selectOneMenu>
+
+            <p:outputLabel value="* CEP: "/>
+            <p:inputMask mask="99.999-999" required="true" size="13"/>
+
+            <p:outputLabel value="* Logradouro: "/>
+            <p:inputText  required="true" size="50" maxlength="50"/>
+
+            <p:outputLabel value="* Número : "/>
+            <p:inputText  required="true" size="8" maxlength="5"/>
+
+            <p:outputLabel value="Complemento : "/>
+            <p:inputText  size="15" maxlength="12"/>
+
+            <p:outputLabel value="* Bairro: "/>
+            <p:selectOneMenu effect="fade" required="true"> 
+                <f:selectItem itemLabel="Selecione a bairro..." itemValue=""/>
+            </p:selectOneMenu>
+
+            <p:outputLabel value="* Zona : "/>
+            <p:inputText  size="23" maxlength="20"/>
+
+            <p:outputLabel value="* País de nascimento: "/>
+            <p:selectOneMenu  effect="fade" required="true"> 
+                <f:selectItem itemLabel="Selecione..." itemValue=""/>
+            </p:selectOneMenu>
+
+            <p:outputLabel value="* Nacionalidade: "/>
+            <p:selectOneMenu  effect="fade" required="true"> 
+                <f:selectItem itemLabel="Selecione..." itemValue=""/>
+            </p:selectOneMenu>
+
+            <p:outputLabel value="* Naturalidade: "/>
+            <p:selectOneMenu effect="fade" required="true"> 
+                <f:selectItem itemLabel="Selecione..." itemValue=""/>
+            </p:selectOneMenu>
+
+            <p:outputLabel value="Nome da mãe: "/>
+            <p:inputText  size="50"  maxlength="50"/>
+
+            <p:outputLabel value="Nacionalidade da mãe: "/>
+            <p:selectOneMenu  effect="fade"> 
+                <f:selectItem itemLabel="Selecione..." itemValue=""/>
+            </p:selectOneMenu>
+
+            <p:outputLabel value="Nome do pai: "/>
+            <p:inputText  size="50" required="true" maxlength="50"/>
+
+            <p:outputLabel value="Nacionalidade do pai: "/>
+            <p:selectOneMenu  effect="fade" required="true"> 
+                <f:selectItem itemLabel="Selecione..." itemValue=""/>
+            </p:selectOneMenu>
+
+            <p:outputLabel value="Dependentes menores: "/>
+            <p:spinner  maxlength="2" min="0" size="6" />
+
+            <p:outputLabel value="Nome do cônjuge: "/>
+            <p:inputText maxlength="50" size="50"/>
+
+            <p:outputLabel value="* Tel. Residencial: "/>
+            <p:inputMask mask="(99)9999-9999"  required="true" size="15" maxlength="13"/>
+
+            <p:outputLabel value="Tel. Celular: "/>
+            <p:inputMask mask="(99)9999-9999"  size="15" maxlength="13"/>
+
+            <p:outputLabel value="Telefone 1: "/>
+            <p:inputMask mask="(99)9999-9999" required="true" size="15" maxlength="13"/>
+
+            <p:outputLabel value="Telefone 2: "/>
+            <p:inputMask mask="(99)9999-9999"  size="15" maxlength="13"/>
+
+            <p:outputLabel value="Telefone 3: "/>
+            <p:inputMask mask="(99)9999-9999"  size="15" maxlength="13"/>
+
+            <p:outputLabel value="Unidade: "/>
+            <p:selectOneMenu  effect="fade"> 
+                <f:selectItem itemLabel="Selecione a unidade..." itemValue=""/>
+            </p:selectOneMenu>
+
+            <p:outputLabel value="* Tipo de cargo: "/>
+            <p:selectOneMenu  effect="fade"> 
+                <f:selectItem itemLabel="Selecione..." itemValue=""/>
+            </p:selectOneMenu>
+
+            <p:outputLabel value="* Cargo: "/>
+            <p:selectOneMenu  effect="fade"> 
+                <f:selectItem itemLabel="Selecione o cargo..." itemValue=""/>
+            </p:selectOneMenu>
+
+            <p:outputLabel value="* Data de admissão: "/>
+            <p:inputMask mask="99/99/9999"  required="true" maxlength="10" size="13"/>
+
+            <p:outputLabel value="Data de demissão: "/>
+            <p:inputMask  mask="99/99/9999" maxlength="10" size="13"/>
+
+            <p:outputLabel value="* Carteira de Trabalho: "/>
+            <p:inputText  required="true" maxlength="10" size="13"/>
+
+            <p:outputLabel value="* Série Carteira de Trabalho: "/>
+            <p:inputText  required="true" maxlength="8" size="10"/>
+
+            <p:outputLabel value="* Unidade Federativa: "/>
+            <p:inputText required="true" maxlength="2" size="5"/>
+
+            <p:outputLabel value="* PIS/PASEP: "/>
+            <p:inputText  required="true" maxlength="15" size="18"/>
+
+            <p:outputLabel value="* Nº do banco: "/>
+            <p:inputText  required="true" maxlength="15" size="18"/>
+
+            <p:outputLabel value="* Agência bancária: "/>
+            <p:inputText  required="true" maxlength="5" size="8"/>
+
+            <p:outputLabel value="* Conta: "/>
+            <p:inputText  required="true" maxlength="15" size="18"/>
+
+            <p:outputLabel value="* Último salário: "/>
+
+            <p:inputText  required="true" maxlength="5" size="8"/>
+
+        </h:panelGrid>
+        <h:panelGrid cellspacing="13px" columns="1">
+            <p:outputLabel value="* Campos obrigatórios" style="font-weight: bold"/>   
+        </h:panelGrid>
+        <h:panelGrid columns="3" style=" margin-top: 25px">
+            <p:button value="Salvar alterações" style="font-size:10px "/>
+            <p:button value="Cancelar alterações" style="font-size:10px"/>
+
+        </h:panelGrid>
+    </p:panel>                  
+
+</ui:composition>

@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+
+      
+                <h:panelGrid columns="1" cellspacing="8px">
+                    <p:outputLabel value="Preencha pelo menos um dos campos a seguir para buscar:"/>
+                </h:panelGrid>
+                <h:panelGrid columns="3" cellspacing="8px">
+                    <p:outputLabel value="Nome do professor: " />
+                    <p:inputText maxlength="50" size="50"/>
+                    <p/>
+                    <p:outputLabel value="Nº da sala: "/>
+                    <p:inputText  maxlength="2" size="5"/>
+                    <p/>
+                    <p:outputLabel value="Tipo de sala: "/>
+                    <p:selectOneMenu required="true" >
+                        <f:selectItem itemLabel="Selecione..." itemValue=""/>
+                        <f:selectItem itemLabel="Auditório" itemValue=""/>
+                        <f:selectItem itemLabel="Laboratório" itemValue=""/>
+                        <f:selectItem itemLabel="Sala" itemValue=""/>
+                    </p:selectOneMenu>
+                    <p:commandButton value="Buscar"/>
+                </h:panelGrid>
+
+                <h:panelGrid columns="1" style="margin-bottom: 10px;margin-top:25px;width:100%">
+                    <p:dataTable emptyMessage="Sem registro de salas" style="text-align: center">
+                        <p:column headerText="Nome do professor" rendered="true">
+                            <p:outputLabel value="Exemplo"/>
+                        </p:column>
+                        <p:column headerText="Nº da sala">
+                            <p:outputLabel value="Exemplo"/>
+                        </p:column>
+                        <p:column headerText="Tipo de sala">
+                            <p:outputLabel value="Exemplo"/>
+                        </p:column>
+
+                        <p:column headerText="Alterar Sala">
+                            <h:button value="Alterar"/>
+                        </p:column>
+                        <p:column headerText="Desativar Sala">
+                            <h:button value="Desativar"/>
+                        </p:column>
+
+                    </p:dataTable>
+                </h:panelGrid>
+          
+
+                <p:panel   header="Dados da Sala" style="font-size: 9.5px;"> 
+                   <h:panelGrid columns="4"  cellspacing="13px" style="width:700px;" >
+
+                        <p:outputLabel value="* Nome do professor:"/>
+                        <p:inputText  maxlength="50" size="50" required="true"/>
+
+                        <p:outputLabel value="* Tipo de sala: "/>
+                        <p:selectOneMenu required="true" >
+                            <f:selectItem itemLabel="Selecione..." itemValue=""/>
+                            <f:selectItem itemLabel="Auditório" itemValue=""/>
+                            <f:selectItem itemLabel="Laboratório" itemValue=""/>
+                            <f:selectItem itemLabel="Sala" itemValue=""/>
+                        </p:selectOneMenu>
+
+                        <p:outputLabel value="* Nº da sala: "/>
+                        <p:inputMask mask="?99"  required="true" size="5" />                    
+
+                        <p:outputLabel value="Bloco da sala: "/>
+                        <p:inputMask mask="?99" size="5" /> 
+
+                        <p:outputLabel value="* Data da reserva: "/>
+                        <p:inputMask mask="99/99/9999" required="true" size="12" />                    
+
+                        <p:outputLabel value="* Hora da reserva: "/>
+                        <p:inputMask mask="99:99"  required="true" size="8" />                    
+
+                        <p:outputLabel value="Observações: "/>
+                        <p:inputTextarea autoResize="false" rows="3" />
+
+                    </h:panelGrid>
+                    <h:panelGrid columns="1" cellspacing="13px" style="width:65%;">
+                        <p:outputLabel value="* Campos obrigatórios" style="font-weight: bold"/> 
+                    </h:panelGrid>
+                    <h:panelGrid columns="3" style=" margin-top: 15px">
+                        <p:button value="Salvar alterações" style="font-size:10px "/>
+                        <p:button value="Cancelar alterações" style="font-size:10px"/>
+
+
+                    </h:panelGrid>
+                </p:panel>                  
+
+
+
+</ui:composition>

@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+
+
+    <h:panelGrid columns="1" cellspacing="8px">
+        <p:outputLabel value="Preencha pelo menos um dos campos a seguir para buscar:"/>
+    </h:panelGrid>
+    <h:panelGrid columns="3" cellspacing="8px">
+        <p:outputLabel value="CNPJ: " />
+        <p:inputMask mask="99.999.999/9999-99"  size="21"/>
+        <p/>
+        <p:outputLabel value="Nome da unidade: "/>
+        <p:inputText  maxlength="50" size="50"/>
+        <p/>
+        <p:outputLabel value="Nome do responsável: " />
+        <p:inputText  maxlength="50" size="50"/>
+        <p:button value="Buscar"/>
+    </h:panelGrid>
+    <h:panelGrid columns="1" style="margin-bottom: 10px;margin-top:25px;width:100%">
+        <p:dataTable emptyMessage="Sem registro de unidades" style="text-align: center">
+            <p:column headerText="CNPJ" rendered="true">
+                <p:outputLabel value="Exemplo"/>
+            </p:column>
+            <p:column headerText="Unidade">
+                <p:outputLabel value="Exemplo"/>
+            </p:column>
+            <p:column headerText="Responsável">
+                <p:outputLabel value="Exemplo"/>
+
+            </p:column>
+            <p:column headerText="Alterar Unidade">
+                <h:button value="Alterar"/>
+            </p:column>
+            <p:column headerText="Desativar Unidade">
+                <h:button value="Desativar"/>
+            </p:column>
+
+        </p:dataTable>
+    </h:panelGrid>
+
+
+
+    <h:panelGrid columns="1" style="width: 100%;font-size: 9.5px; ">
+
+        <p:panel header="Dados da unidade" rendered="false"> 
+            <h:panelGrid columns="4"  cellspacing="13px" cellpadding="20px"  >
+                <p:outputLabel value="* Nome razão social: "/>
+                <p:inputText  required="true" size="50"/>
+
+                <p:outputLabel value="Nome fantasia: "/>
+                <p:inputText   size="50" maxlength="50" />
+
+                <p:outputLabel value="* CNPJ: "/>
+                <p:inputMask mask="99.999.999/9999-99" size="21"/>
+
+                <p:outputLabel value="* Data de abertura: "/>
+                <p:inputMask  mask="99/99/9999"  size="12" maxlength="10"/>
+
+                <p:outputLabel value="* Inscrição estadual: " />
+                <p:inputText  required="true"  maxlength="16" size="21"/>                       
+
+                <p:outputLabel value="* Inscrição municipal: "/>
+                <p:inputText   required="true" maxlength="16" size="21"/>
+
+                <p:outputLabel value="* Estado da inscrição:" />
+                <p:selectOneMenu style="width:100%">  
+                    <f:selectItem   itemLabel="Selecione um estado" itemValue=""/>
+                </p:selectOneMenu>
+
+                <p:outputLabel value="* Cidade da inscrição: " />
+                <p:selectOneMenu>  
+                    <f:selectItem itemLabel="Selecione uma cidade" itemValue=""/>
+                </p:selectOneMenu>
+
+                <p:outputLabel value="* Ramo de atividade: " />
+                <p:inputText required="true" size="30" maxlength="30"/>
+
+                <p:outputLabel value="* Principal produto: " />
+                <p:inputText required="true" size="30" />
+
+                <p:outputLabel value="* Nº do contrato social: " />
+                <p:inputText required="true"  maxlength="16" size="21"/>
+
+                <p:outputLabel value="* Valor do capital social: " />
+                <p:inputText required="true"  maxlength="5" size="5"/>
+
+                <p:outputLabel value="* Data de última alteração: "/>
+                <p:inputMask mask="99/99/9999" size="12" maxlength="10"/>
+
+                <p:outputLabel value="* Nº de ações ou cotas: " />
+                <p:inputText required="true"  maxlength="2" size="2"/>
+
+                <p:outputLabel value="* Patrimônio Líquido: "  />
+                <p:inputText required="true"   maxlength="5" size="5"/>
+
+                <p:outputLabel value="* Estado: "/>
+                <p:selectOneMenu>  
+                    <f:selectItem itemLabel="Selecione um estado" itemValue=""/>
+                </p:selectOneMenu>
+
+                <p:outputLabel value="* Cidade: "/>
+                <p:selectOneMenu>  
+                    <f:selectItem itemLabel="Selecione uma cidade" itemValue=""/>
+                </p:selectOneMenu>                       
+
+                <p:outputLabel value="* CEP: "  />
+                <p:inputMask mask="99.999-999" required="true" size="13"/>
+
+                <p:outputLabel value="* Logradouro: "  />
+                <p:inputText required="true" size="50" maxlength="50" />
+
+                <p:outputLabel value="* Número: "  />
+                <p:inputText required="true" size="5" maxlength="5" />
+
+                <p:outputLabel value="Complemento: "  />
+                <p:inputText required="true" size="12" maxlength="12" />
+
+                <p:outputLabel value="* Bairro: "  />
+                <p:selectOneMenu effect="fade" required="true"> 
+                    <f:selectItem itemLabel="Selecione a bairro..." itemValue=""/>
+                </p:selectOneMenu>
+
+                <p:outputLabel value="* Telefone 1: "/>
+                <p:inputMask mask="(99)9999-9999" size="14"  />
+
+                <p:outputLabel value="Telefone 2: "/>
+                <p:inputMask  mask="(99)9999-9999"   size="14" />
+
+                <p:outputLabel value="Telefone 3: "/>
+                <p:inputMask mask="(99)9999-9999"   size="14"  />
+
+                <p:outputLabel value="Telefone 4 "/>
+                <p:inputMask mask="(99)9999-9999"  size="14"  />
+
+                <p:outputLabel value="Fax: "/>
+                <p:inputMask mask="(99)9999-9999" size="14" />
+
+                <p:outputLabel value="Email: "/>
+                <p:inputText label="Email"  size="40"/> 
+
+                <p:outputLabel value="Site: "/>                                
+                <p:inputText  required="false" size="50" /> 
+
+                <p:outputLabel value="* Nome do responsável: "  />
+                <p:inputText  required="true" size="50" />
+
+                <p:outputLabel value="* RG do responsável: "  />
+                <h:panelGrid columns="3">
+                    <p:inputText required="true" size="18" maxlength="15" />
+                    <p:outputLabel value=" - "/>
+                    <p:inputText required="true" size="2" maxlength="1" />
+                </h:panelGrid>
+
+                <p:outputLabel value="* CPF do responsável: "  />
+                <p:inputMask mask="999.999.999-99"  size="21"/>
+
+                <p:outputLabel value="* Estado civil do resp.: "  />
+                <p:selectOneMenu>  
+                    <f:selectItem itemLabel="Selecione..." itemValue="0"/>
+                    <f:selectItem itemLabel="Solteiro(a)" itemValue="1"/>
+                    <f:selectItem itemLabel="Casado(a)" itemValue="2"/>
+                    <f:selectItem itemLabel="Divorciado(a)" itemValue="3"/>
+                    <f:selectItem itemLabel="Viúvo(a)" itemValue="4"/>
+                </p:selectOneMenu>
+
+                <p:outputLabel value="Nome do 1º sócio: "  />
+                <p:inputText required="true" size="50"/>
+
+                <p:outputLabel value="RG do 1º sócio: "  />
+                <h:panelGrid columns="3">
+                    <p:inputText required="true" size="18" maxlength="15" />
+                    <p:outputLabel value=" - "/>
+                    <p:inputText required="true" size="2" maxlength="1" />
+                </h:panelGrid>
+
+                <p:outputLabel value="CPF do 1º sócio: "  />
+                <p:inputMask mask="999.999.999-99" size="21"/>
+
+                <p:outputLabel value="Estado civil do sócio: "  />
+                <p:selectOneMenu>  
+                    <f:selectItem itemLabel="Selecione..." itemValue="0"/>
+                    <f:selectItem itemLabel="Solteiro(a)" itemValue="1"/>
+                    <f:selectItem itemLabel="Casado(a)" itemValue="2"/>
+                    <f:selectItem itemLabel="Divorciado(a)" itemValue="3"/>
+                    <f:selectItem itemLabel="Viúvo(a)" itemValue="4"/>
+                </p:selectOneMenu>
+
+                <p:outputLabel value="Observações: "  />
+                <p:inputTextarea  autoResize="false" rows="3"/>
+                <p:outputLabel value="* Campos obrigatórios" style="font-weight: bold"/>   
+
+            </h:panelGrid>
+            <h:panelGrid columns="3" style=" margin-top: 15px">
+                <p:button value="Salvar alterações" style="font-size:10px "/>
+                <p:button value="Cancelar alterações" style="font-size:10px"/>
+
+
+            </h:panelGrid>
+        </p:panel>                  
+
+    </h:panelGrid>
+</ui:composition>
