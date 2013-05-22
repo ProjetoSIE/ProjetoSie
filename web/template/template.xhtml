@@ -13,7 +13,7 @@
         </script>
         <h:outputStylesheet library="css" name="estilo.css"/>        
     </h:head>
-    
+
     <body>
         <h:panelGroup layout="block" styleClass="base"> 
 
@@ -24,10 +24,18 @@
                     <p:menubar>        
                         <p:submenu label="Pedagógico">                            
                         </p:submenu>
-                        <p:submenu label="Administração">                           
-                           <p:menuitem value="Exemplo" url="/pages/administracao/exemplo.sie"/>                                                                                         
+                        <p:submenu label="Administração"> 
+                            <p:menuitem value="Unidade" url="/pages/administracao/unidade.sie"/>                                     
+                            <p:menuitem value="Curso" url="/pages/administracao/curso.sie"/>                                                                   
+                            <p:menuitem value="Sala" url="/pages/administracao/sala.sie"/>                                                                                 
+                            <p:menuitem value="Disciplina" url="/pages/administracao/disciplina.sie"/>      
+                            <p:menuitem value="Subnível de Curso" url="/pages/administracao/subnivelCurso.sie" />                           
+                            <p:menuitem value="Turmas" url="/pages/administracao/turma.sie"/>                                     
                         </p:submenu>                        
-                        <p:submenu label="Administração Pessoas">                            
+                        <p:submenu label="Administração Pessoas"> 
+                            <p:menuitem value="Funcionário" url="/pages/administracao/funcionario.sie"/>      
+                            <p:menuitem value="Professor" url="/pages/administracao/funcionario.sie"/>          
+                            <p:menuitem value="Estagiário" url="/pages/administracao/estagiario.sie" />      
                         </p:submenu>
                         <p:submenu label="Serviços Online">                                                   
                         </p:submenu>
@@ -44,9 +52,9 @@
             </h:panelGroup>
 
             <h:panelGroup layout="block" styleClass="rodape">
-                <h:outputText value="Projeto SIE - Sistema Integrado Educacional"/>
+                <p:outputLabel value="Projeto SIE - Sistema Integrado Educacional"/>
                 <br/>
-                <h:outputText value="SIE - CopyRight - Todos os direitos reservados"/>
+                <p:outputLabel value="SIE - CopyRight - Todos os direitos reservados"/>
             </h:panelGroup>
         </h:panelGroup>
 
