@@ -3,6 +3,7 @@
 body{
     font-family: arial, helvetica, sans-serif;
     font-size: 12px;
+    background-repeat:  repeat-x;
     background-image: url('../resources/images/fundo.png');
 }
 
@@ -21,6 +22,15 @@ body{
     padding: 5px;
     width: 955px;
 
+}
+
+.ui-inputfield, .ui-widget-content .ui-inputfield,ui-widget-content .ui-selectonemenu-label, .ui-widget-header .ui-inputfield{
+     box-shadow: none;
+     text-shadow: none;
+}
+
+.ui-inputfield.ui-state-focus, .ui-widget-content .ui-inputfield.ui-state-focus, .ui-widget-header .ui-inputfield.ui-state-focus{   
+    box-shadow: none;
 }
 
 .conteudo{
