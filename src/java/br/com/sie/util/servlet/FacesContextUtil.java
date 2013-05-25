@@ -24,27 +24,15 @@ public class FacesContextUtil implements java.io.Serializable {
         return (String) fc().getExternalContext().getApplicationMap().get(name);
     }
     
+    public HttpSession getSession(boolean create) {
+        return (HttpSession) fc().getExternalContext().getSession(create);
+    }
+    
     private Map<String, Object> sessionMap() {
         fc().getExternalContext().getSession(false);
         return fc().getExternalContext().getSessionMap();
     }
-    
-    public HttpSession getSession(boolean create) {
-        return (HttpSession) fc().getExternalContext().getSession(create);
-    }
 
-    public HttpServletRequest request() {
-        return (HttpServletRequest) fc().getExternalContext().getRequest();
-    }
-
-    public HttpServletResponse response() {
-        return (HttpServletResponse) fc().getExternalContext().getResponse();
-    }
-
-    public String getNavigationUrl() {        
-        return fc().getViewRoot().getViewId();
-    }
-    
     public void putOnSessionMap(String key, Object value) {
         synchronized (this) {
             sessionMap().put(key, value);
@@ -63,19 +51,10 @@ public class FacesContextUtil implements java.io.Serializable {
         }
     }
     
-    public void handleNavigation(String outcome) {
-        fc().getApplication().getNavigationHandler().handleNavigation(fc(), null, outcome);
+    public HttpServletRequest request() {
+        return (HttpServletRequest) fc().getExternalContext().getRequest();
     }
-
-   public void sendRedirect(String location) {
-        try {
-            response().sendRedirect(location);
-            fc().responseComplete();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-   
+    
     public void forwardRequestDispatcher(String outcome) {
         try {
             request().getRequestDispatcher(outcome).forward(request(), response());
@@ -93,4 +72,25 @@ public class FacesContextUtil implements java.io.Serializable {
     public Locale getLocale(){
         return request().getLocale();
     }            
+    
+    public HttpServletResponse response() {
+        return (HttpServletResponse) fc().getExternalContext().getResponse();
+    }
+    
+    public void sendRedirect(String location) {
+        try {
+            response().sendRedirect(location);
+            fc().responseComplete();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+        
+    public String getNavigationUrl() {        
+        return fc().getViewRoot().getViewId();
+    }
+    
+    public void handleNavigation(String outcome) {
+        fc().getApplication().getNavigationHandler().handleNavigation(fc(), null, outcome);
+    } 
 }
